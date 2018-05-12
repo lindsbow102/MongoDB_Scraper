@@ -1,0 +1,58 @@
+<!-- As a heading -->
+<nav class="navbar navbar-light bg-light">
+    <span class="navbar-brand mb-0 h1">New York Times Article Scraper</span>
+    <a class="navbar-brand" href="/scrape">Scrape!</a>
+</nav>
+
+<br>
+
+<!-- Articles -->
+<div class="container">
+
+    <table>
+        <tbody>
+
+            {{#each articles}}
+            <div class="row" id="wrapper">
+                <h2>The Leading New York Times Headlines</h2>
+                <div class="col-sm-8" id="articles">
+                    <a href="{{this.link}}" class="collection-item blue-text" target="_blank">{{this.title}}</a>
+                </div>
+                <div class="col-sm-4" id="notes">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#noteModal" id="{{this._id}}">
+                        Add Note
+                    </button>
+                </div>
+
+            </div>
+            {{/each}}
+
+        </tbody>
+    </table>
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="noteModal" tabindex="-1" role="dialog" aria-labelledby="noteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="noteModalLabel">Your Note:</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="app.js"></script>
