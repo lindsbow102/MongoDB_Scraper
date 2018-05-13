@@ -9,11 +9,11 @@ $("#scrape").on("click", function() {
     })
 });
 
-//Set clicked nav option to active
-$(".navbar-nav li").click(function() {
-   $(".navbar-nav li").removeClass("active");
-   $(this).addClass("active");
-});
+// //Set clicked nav option to active
+// $(".navbar-nav li").click(function() {
+//    $(".navbar-nav li").removeClass("active");
+//    $(this).addClass("active");
+// });
 
 //Handle Save Article button
 $(".save").on("click", function() {
@@ -54,7 +54,7 @@ $(".saveNote").on("click", function() {
               console.log(data);
               // Empty the notes section
               $("#noteText" + thisId).val("");
-              $("#myModal").modal("hide");
+              $(".modalNote").modal("hide");
               //$(".modalNote").modal("hide");
               window.location = "/saved"
           });

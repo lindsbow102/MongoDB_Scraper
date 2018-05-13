@@ -1,107 +1,37 @@
 <!-- As a heading -->
-<nav class="navbar navbar-light bg-light">
-    <span class="navbar-brand mb-0 h1">New York Times Article Scraper</span>
-    <a class="navbar-brand" href="/scrape">Scrape!</a>
-</nav>
-
-<br>
-<!--The Articles-->
-</div>
-<div class="col-md-12">
-    {{#if article}} {{#each article}}
-    <div class="card">
-        <div class="card-heading">
-            <h4 class="card-title">{{this.title}}</h4>
-        </div>
-        <div class="card-body">
-            <p> {{this.summary}}</p>
-            <a href={{this.link}} target="_blank">{{this.link}}</a>
-            <br>
-            <br>
-            <button type="button" class="btn btn-success save" data-id={{this._id}}>Save Article</button>
-        </div>
-
-        <div class="col-sm-4" id="notes">
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#noteModal" id="{{this._id}}">
-                Add Note
-            </button>
-            <button type="button" class="btn btn-danger delete" data-id={{this._id}}>Delete</button>
-        </div>
-    </div>
-    {{/each}} {{else}}
-    <div class="card">
-        <div class="card-body">
-            <h4>Uh Oh. Looks like we don't have any new articles.</h4>
-        </div>
-    </div>
-    {{/if}}
-</div>
-</div>
-
-<!-- Articles 
 <div class="container">
 
-    <table>
-        <tbody>
-
-            {{#each articles}}
-            <div class="row" id="wrapper">
-                <h2>The Leading New York Times Headlines</h2>
-                <div class="col-sm-8" id="articles">
-                    <a href="{{this.link}}" class="collection-item blue-text" target="_blank">{{this.title}}</a>
-                </div>
-                <div class="col-sm-4" id="notes">
-                    <!-- Button trigger modal 
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#noteModal" id="{{this._id}}">
-                        Add Note
-                    </button>
-                </div>
-
-            </div>
-            {{/each}}
-
-        </tbody>
-    </table>
-
-</div>-->
-
-<!-- Modal -->
-<div class="modal fade myModal" id="noteModal{{this.id}}" tabindex="-1" role="dialog" aria-labelledby="noteModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="noteModalLabel">Your Note: {{this.title}}</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                {{#if this.notes}} {{#each this.notes}}
-                <div class="card card-default">
-                    <div class="card-body">
-                        <p class="previousNotes"> {{this.body}}</p>
-                        <button type="button" class="btn btn-danger deleteNote" data-note-id={{this._id}} data-article-id={{this.article}}>X</button>
-                    </div>
-                </div>
-                {{/each}} {{else}}
-                <div class="card card-default">
-                    <div class="card-body">
-                        <h4>No notes for this article yet.</h4>
-                    </div>
-                </div>
-                {{/if}}
-                <div class="form-group">
-                    <textarea id="noteText{{this._id}}" class="form-control" rows="4" placeholder="New Note"></textarea>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary saveNote" data-id={{this._id}}>Save changes</button>
-            </div>
+    <div class="col-md-12 jumbotron">
+        <div class="text-center">
+            <h1> New York Times Scraper</h1>
+            <a href="/">Home</a> |
+            <a href="/saved">Saved Articles</a> 
+            <br>
+            <button type="button" class="btn btn-primary" id="scrape">Scrape Articles</button>
         </div>
     </div>
+    <!--The Articles-->
+    <div class="col-md-12">
+        {{#if article}} {{#each article}}
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">{{this.title}}</h4>
+                <button type="button" class="btn btn-success save" data-id={{this._id}}>Save Article</button>
+            </div>
+            <div class="card-body">
+                <p class="card-text"> {{this.summary}}</p>
+                <a href={{this.link}} target="_blank">{{this.link}}</a>
+            </div>
+        </div>
+        {{/each}} {{else}}
+        <div class="card">
+            <div class="card-body">
+                <h4>Uh Oh. Looks like we don't have any new articles.</h4>
+            </div>
+        </div>
+        {{/if}}
+    </div>
 </div>
-
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

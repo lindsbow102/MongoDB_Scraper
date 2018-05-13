@@ -3,21 +3,18 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="noteModalLabel">Your Note: {{this.title}}</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <h5 class="modal-title">Your Note for: {{this.title}}</h5>
             </div>
             <div class="modal-body">
                 {{#if this.notes}} {{#each this.notes}}
-                <div class="card card-default">
+                <div class="card">
                     <div class="card-body">
                         <p class="previousNotes"> {{this.body}}</p>
                         <button type="button" class="btn btn-danger deleteNote" data-note-id={{this._id}} data-article-id={{this.article}}>X</button>
                     </div>
                 </div>
                 {{/each}} {{else}}
-                <div class="card card-default">
+                <div class="card">
                     <div class="card-body">
                         <h4>No notes for this article yet.</h4>
                     </div>
