@@ -20,12 +20,14 @@
             <br>
             <button type="button" class="btn btn-success save" data-id={{this._id}}>Save Article</button>
         </div>
-    </div>
-    <div class="col-sm-4" id="notes">
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#noteModal" id="{{this._id}}">
-            Add Note
-        </button>
+
+        <div class="col-sm-4" id="notes">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#noteModal" id="{{this._id}}">
+                Add Note
+            </button>
+            <button type="button" class="btn btn-danger delete" data-id={{this._id}}>Delete</button>
+        </div>
     </div>
     {{/each}} {{else}}
     <div class="card">
@@ -65,7 +67,7 @@
 </div>-->
 
 <!-- Modal -->
-<div class="modal fade" id="noteModal{{this.id}}" tabindex="-1" role="dialog" aria-labelledby="noteModalLabel" aria-hidden="true">
+<div class="modal fade myModal" id="noteModal{{this.id}}" tabindex="-1" role="dialog" aria-labelledby="noteModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -99,6 +101,8 @@
         </div>
     </div>
 </div>
+
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="app.js"></script>

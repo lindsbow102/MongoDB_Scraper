@@ -54,7 +54,8 @@ $(".saveNote").on("click", function() {
               console.log(data);
               // Empty the notes section
               $("#noteText" + thisId).val("");
-              $(".modalNote").modal("hide");
+              $("#myModal").modal("hide");
+              //$(".modalNote").modal("hide");
               window.location = "/saved"
           });
     }
