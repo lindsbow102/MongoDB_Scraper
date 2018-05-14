@@ -1,3 +1,28 @@
 body {
-    backgound-color: teal;
+    background-image: url("../images/background.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+h1{
+    font-family: 'Playfair Display SC', serif;
+    font-family: 'Ultra', serif;
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 90px;
+}
+
+.card-title {
+    font-family: 'Playfair Display SC', serif;
+    font-family: 'Ultra', serif;
+    font-family: 'Cinzel Decorative', cursive;
+}
+
+.card {
+    margin-bottom: 15px;
+}
+
+.card-header {
+    background-color: black;
+    color: white;
+    text-align: center;
 }

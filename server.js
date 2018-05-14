@@ -30,6 +30,7 @@ app.use(bodyParser.urlencoded({
 
 // Make public a static dir
 app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, '/public')));
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");

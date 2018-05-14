@@ -5,7 +5,7 @@
         <div class="text-center">
             <h1> New York Times Scraper</h1>
             <a href="/">Home</a> |
-            <a href="/saved">Saved Articles</a> 
+            <a href="/saved">Saved Articles</a>
             <br>
             <button type="button" class="btn btn-primary" id="scrape">Scrape Articles</button>
         </div>
@@ -16,11 +16,13 @@
         <div class="card">
             <div class="card-header">
                 <h4 class="card-title">{{this.title}}</h4>
-                <button type="button" class="btn btn-success save" data-id={{this._id}}>Save Article</button>
+
             </div>
             <div class="card-body">
                 <p class="card-text"> {{this.summary}}</p>
                 <a href={{this.link}} target="_blank">{{this.link}}</a>
+                <br>
+                <button type="button" class="btn btn-success save" data-id={{this._id}}>Save Article</button>
             </div>
         </div>
         {{/each}} {{else}}
@@ -35,4 +37,4 @@
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="app.js"></script>
+<!--<script src="app.js"></script>
