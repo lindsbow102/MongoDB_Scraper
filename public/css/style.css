@@ -5,16 +5,12 @@ body {
 }
 
 h1{
-    font-family: 'Playfair Display SC', serif;
-    font-family: 'Ultra', serif;
     font-family: 'Cinzel Decorative', cursive;
     font-size: 90px;
 }
 
 .card-title {
-    font-family: 'Playfair Display SC', serif;
-    font-family: 'Ultra', serif;
-    font-family: 'Cinzel Decorative', cursive;
+    font-family: 'Doppio One', sans-serif;
 }
 
 .card {
@@ -22,7 +18,7 @@ h1{
 }
 
 .card-header {
-    background-color: black;
+    background-color: #333;
     color: white;
     text-align: center;
 }
