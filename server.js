@@ -4,6 +4,7 @@ var bodyParser = require("body-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 var path = require("path");
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoscraper";
 
 // Requiring Note and Article models
 var Note = require("./models/Note.js");
@@ -42,7 +43,7 @@ app.engine("handlebars", exphbs({
 app.set("view engine", "handlebars");
 
 // Database configuration with mongoose
-mongoose.connect("mongodb://localhost/mongoscraper");
+mongoose.connect("MONGODB_URI");
 //mongoose.connect("mongodb://localhost/mongoscraper");
 var db = mongoose.connection;
 
