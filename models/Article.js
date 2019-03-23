@@ -10,8 +10,7 @@ var ArticleSchema = new Schema({
         required: true
     },
     summary: {
-        type: String,
-        required: true
+        type: String
     },
     link: {
         type: String,
