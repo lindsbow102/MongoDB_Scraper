@@ -11,7 +11,7 @@ var Note = require("./models/Note.js");
 var Article = require("./models/Article.js");
 
 // Scraping tools
-var request = require("request");
+var axios = require("axios");
 var cheerio = require("cheerio");
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
@@ -81,20 +81,29 @@ app.get("/saved", function (req, res) {
 });
 //GET request to scrape the NY Times Website
 app.get("/scrape", function (req, res) {
-    // First, we grab the body of the html with request
-    request("https://www.nytimes.com/", function (error, response, html) {
-        // Then, we load that into cheerio and save it to $ for a shorthand selector
-        var $ = cheerio.load(html);
+    return axios.get("http://www.nytimes.com").then(function(res) {
+    var $ = cheerio.load(res.data);
+    console.log("scraping");
+    // Make an empty array to save our article info
+    //var articles = [];
         // Now, we grab every h2 within an article tag, and do the following:
-        $("article").each(function (i, element) {
+        $(".css-6p6lnl").each(function (i, element) {
 
             // Save an empty result object
             var result = {};
 
             // Add the title and summary of every link, and save them as properties of the result object
-            result.title = $(this).children("h2").text();
-            result.summary = $(this).children(".summary").text();
-            result.link = $(this).children("h2").children("a").attr("href");
+            result.title = $(this)
+            .find("h2")
+            .text()
+            .trim();
+            result.summary = $(this)
+            .find("p")
+            .text()
+            .trim();
+            result.link = "https://www.nytimes.com/" + $(this)
+            .find("a")
+            .attr("href");
 
             // Using our Article model, create a new entry
             // This effectively passes the result object to the entry (and the title and link)
@@ -113,7 +122,7 @@ app.get("/scrape", function (req, res) {
             });
 
         });
-        res.send("Scrape Complete");
+        console.log("Scrape Complete");
 
     });
 });
