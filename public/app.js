@@ -1,25 +1,15 @@
 
 //Handle Scrape button
-// $("#scrape").on("click", function () {
-//     $.ajax({
-//         method: "GET",
-//         url: "/scrape",
-//     }).done(function (data) {
-//         console.log(data);
-//         location.reload();        
-//     })
-// });
-
 $("#scrape").on("click", function() {
     $.ajax({
         method: "GET",
-        url: "/scrape"
-    }).then(function(data) {
-        alert("You scraped!");
+        url: "/scrape",
+    }).done(function(data) {
         console.log(data);
-        window.location.reload(true);
-    })
-})
+    });
+    alert("Scraping data now");
+    window.location = "/";   
+});
 
 //Handle Save Article button
 $(".save").on("click", function () {

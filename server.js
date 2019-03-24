@@ -125,9 +125,9 @@ app.get("/scrape", function(req, res) {
           console.log(err);
         }
         // Or log the doc
-        else {
+        //else {
           //console.log(doc);
-        }
+        //}
       });
     });
     console.log("Scrape Complete");
