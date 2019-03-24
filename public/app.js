@@ -7,7 +7,7 @@ $("#scrape").on("click", function() {
     }).done(function(data) {
         console.log(data);
     });
-    alert("Scraping data now");
+    alert("Scraping current articles now!!");
     window.location = "/";   
 });
 
@@ -22,7 +22,7 @@ $(".save").on("click", function () {
     })
 });
 
-//Handle Delete Article button
+//Handle Delete Saved Article button
 $(".delete").on("click", function () {
     var thisId = $(this).attr("data-id");
     $.ajax({
