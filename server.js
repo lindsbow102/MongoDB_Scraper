@@ -109,7 +109,7 @@ app.get("/scrape", function(req, res) {
         .text()
         .trim();
       result.link =
-        "https://www.nytimes.com/" +
+        "https://www.nytimes.com" +
         $(this)
           .find("a")
           .attr("href");
@@ -126,7 +126,7 @@ app.get("/scrape", function(req, res) {
         }
         // Or log the doc
         else {
-          console.log(doc);
+          //console.log(doc);
         }
       });
     });
