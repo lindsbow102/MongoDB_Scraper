@@ -5,8 +5,8 @@ $("#scrape").on("click", function () {
         method: "GET",
         url: "/scrape",
     }).done(function (data) {
-        console.log(data)
-        window.location = "/"
+        window.location = "/";
+        console.log(data);        
     })
 });
 
@@ -66,5 +66,16 @@ $(".deleteNote").on("click", function () {
         console.log(data)
         // $(".modalNote").modal("hide");
         window.location = "/saved"
+    })
+});
+
+$("#clear").on("click", function () {
+    $.ajax({
+        method: "DELETE",
+        url: "/articles/clear",
+    }).done(function (data) {
+        $(".article-container").empty();
+        $(".no-articles").show();
+        window.location = "/"
     })
 });

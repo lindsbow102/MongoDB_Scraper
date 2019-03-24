@@ -8,12 +8,13 @@
             <a href="/saved">Saved Articles</a>
             <br>
             <button type="button" class="btn btn-primary" id="scrape">Scrape Articles</button>
+            <button type="button" class="btn btn-primary" id="clear">Clear all Articles</button>
         </div>
     </div>
     <!--The Articles-->
     <div class="col-md-12">
         {{#if article}} {{#each article}}
-        <div class="card">
+        <div class="card article-container">
             <div class="card-header">
                 <h4 class="card-title">{{this.title}}</h4>
 
@@ -26,7 +27,7 @@
             </div>
         </div>
         {{/each}} {{else}}
-        <div class="card">
+        <div class="card no-articles">
             <div class="card-body">
                 <h4>Uh Oh. Looks like we don't have any new articles.</h4>
             </div>

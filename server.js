@@ -268,15 +268,15 @@ app.delete("/notes/delete/:note_id/:article_id", function(req, res) {
 });
 
 // Clear all articles
-// app.delete("/articles/delete", function(req, res) {
-//   Article.remove({})
-//     .then(function() {
-//       return Note.remove({});
-//     })
-//     .then(function() {
-//       res.json({ ok: true });
-//     });
-// });
+app.delete("/articles/clear", function(req, res) {
+  Article.remove({})
+    .then(function() {
+      return Note.remove({});
+    })
+    .then(function() {
+      res.json({ ok: true });
+    });
+});
 
 // Listen on port
 app.listen(port, function() {
