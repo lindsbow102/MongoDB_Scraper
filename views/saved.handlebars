@@ -8,10 +8,10 @@
             <a href="/">Return to Home Page</a> 
         </div>
     </div>
-    <div class="col-md-12">
+    <div class="col-md-12 articles">
         {{#if article}}
             {{#each article}}
-                <div class="card">
+                <div class="card article-container">
                     <div class="card-header">
                         <h4 class="card-title">{{this.title}}</h4>
                     </div>
@@ -25,7 +25,7 @@
                 </div>
             {{/each}}
         {{else}}
-        <div class="card">
+        <div class="card no-articles">
             <div class="card-body">
                 <h4>You have no saved articles.</h4>
             </div>
@@ -38,5 +38,7 @@
 {{#each article}}
     {{> notes-modal }}
 {{/each}}
+
+{{> footer}}
 
 <!--<script src="app.js"></script>

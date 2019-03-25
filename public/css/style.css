@@ -9,16 +9,37 @@ h1{
     font-size: 90px;
 }
 
+.articles {
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+}
+
 .card-title {
     font-family: 'Doppio One', sans-serif;
 }
 
 .card {
-    margin-bottom: 15px;
+    margin-bottom: 2rem;
 }
 
 .card-header {
     background-color: #333;
     color: white;
     text-align: center;
+}
+
+.footer {
+    background-color: black;
+    border-top: 2px solid darkslategray;
+    color: whitesmoke;
+    height: 5rem;
+    padding-top: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;    
+    text-align: center;    
+}
+
+#name {
+    font-family: 'Cinzel Decorative', cursive;
 }

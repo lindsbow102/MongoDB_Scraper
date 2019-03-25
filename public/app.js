@@ -70,6 +70,7 @@ $(".deleteNote").on("click", function () {
     })
 });
 
+// Handle Clear all Articles button
 $("#clear").on("click", function () {
     $.ajax({
         method: "DELETE",

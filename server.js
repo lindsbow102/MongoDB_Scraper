@@ -26,14 +26,11 @@ app.use(express.static("public"));
 app.use(express.static(path.join(__dirname, "/public")));
 
 // Handlebars
-app.engine(
-  "handlebars",
-  exphbs({
-    defaultLayout: "main",
-    partialsDir: path.join(__dirname, "/views/layouts/partials")
-  })
-);
+app.engine("handlebars", exphbs({ 
+  defaultLayout: "main"
+}));
 app.set("view engine", "handlebars");
+
 
 // Database configuration with mongoose
 mongoose.connect(MONGODB_URI);
