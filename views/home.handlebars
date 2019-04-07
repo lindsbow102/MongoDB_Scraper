@@ -10,8 +10,8 @@
             </div>
 
             <br>
-            <button type="button" class="btn btn-primary" id="scrape">Scrape Articles</button>
-            <button type="button" class="btn btn-primary" id="clear">Clear all Articles</button>
+            <button type="button" class="btn btn-primary btn-lg" id="scrape">Scrape Articles</button>
+            <button type="button" class="btn btn-primary btn-lg" id="clear">Clear all Articles</button>
         </div>
     </div>
     <!--The Articles-->
@@ -27,7 +27,7 @@
                     <p class="card-text"> {{this.summary}}</p>
                     <a href={{this.link}} target="_blank">{{this.link}}</a>
                     <br>
-                    <button type="button" class="btn btn-success save" data-id={{this._id}}>Save Article</button>
+                    <button type="button" class="btn btn-success btn-lg save" data-id={{this._id}}>Save Article</button>
                 </div>
             </div>
             {{/each}} {{else}}
