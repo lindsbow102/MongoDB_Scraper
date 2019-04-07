@@ -2,11 +2,18 @@ body {
     background-image: url("../images/background.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-size: cover;
+    position: relative;
 }
 
 h1{
     font-family: 'Cinzel Decorative', cursive;
     font-size: 90px;
+}
+
+.links {
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
 .articles {

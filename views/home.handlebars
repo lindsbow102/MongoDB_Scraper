@@ -1,38 +1,43 @@
 <!-- As a heading -->
-<div class="container">
+<div class="container-fluid">
 
     <div class="col-md-12 jumbotron">
         <div class="text-center">
             <h1> New York Times Scraper</h1>
-            <a href="/">Home</a> |
-            <a href="/saved">Saved Articles</a>
+            <div class="links">
+                <a href="/">Home</a> |
+                <a href="/saved">Saved Articles</a>
+            </div>
+
             <br>
             <button type="button" class="btn btn-primary" id="scrape">Scrape Articles</button>
             <button type="button" class="btn btn-primary" id="clear">Clear all Articles</button>
         </div>
     </div>
     <!--The Articles-->
-    <div class="col-md-12 articles">
-        {{#if article}} {{#each article}}
-        <div class="card article-container">
-            <div class="card-header">
-                <h4 class="card-title">{{this.title}}</h4>
+    <div class="container">
+        <div class="col-md-12 articles">
+            {{#if article}} {{#each article}}
+            <div class="card article-container">
+                <div class="card-header">
+                    <h4 class="card-title">{{this.title}}</h4>
 
+                </div>
+                <div class="card-body">
+                    <p class="card-text"> {{this.summary}}</p>
+                    <a href={{this.link}} target="_blank">{{this.link}}</a>
+                    <br>
+                    <button type="button" class="btn btn-success save" data-id={{this._id}}>Save Article</button>
+                </div>
             </div>
-            <div class="card-body">
-                <p class="card-text"> {{this.summary}}</p>
-                <a href={{this.link}} target="_blank">{{this.link}}</a>
-                <br>
-                <button type="button" class="btn btn-success save" data-id={{this._id}}>Save Article</button>
+            {{/each}} {{else}}
+            <div class="card no-articles">
+                <div class="card-body">
+                    <h4>Uh Oh. Looks like we don't have any new articles.</h4>
+                </div>
             </div>
+            {{/if}}
         </div>
-        {{/each}} {{else}}
-        <div class="card no-articles">
-            <div class="card-body">
-                <h4>Uh Oh. Looks like we don't have any new articles.</h4>
-            </div>
-        </div>
-        {{/if}}
     </div>
 </div>
-        {{> footer }}
+{{> footer }}
