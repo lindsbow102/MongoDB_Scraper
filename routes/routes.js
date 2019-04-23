@@ -27,10 +27,10 @@ module.exports = function(app) {
     Article.find({ saved: true })
       .populate("notes")
       .exec(function(error, articles) {
-        var hbsObject = {
+        var hbsSaved = {
           article: articles
         };
-        res.render("saved", hbsObject);
+        res.render("saved", hbsSaved);
       });
   });
   //GET request to scrape the NY Times Website
@@ -38,8 +38,7 @@ module.exports = function(app) {
     return axios.get("http://www.nytimes.com").then(function(res) {
       var $ = cheerio.load(res.data);
       console.log("scraping");
-      // Make an empty array to save our article info
-      //var articles = [];
+
       // Now, we grab every h2 within an article tag, and do the following:
       $(".css-6p6lnl").each(function(i, element) {
         // Save an empty result object
@@ -66,14 +65,10 @@ module.exports = function(app) {
 
         // Now, save that entry to the db
         entry.save(function(err, doc) {
-          // Log any errors
+          // Log errors
           if (err) {
             console.log(err);
           }
-          // Or log the doc
-          //else {
-          //console.log(doc);
-          //}
         });
       });
       console.log("Scrape Complete");
